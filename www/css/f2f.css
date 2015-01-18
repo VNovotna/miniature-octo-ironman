@@ -1,0 +1,42 @@
+#page {
+  margin: 30px auto;
+}
+#page header {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+#page nav {
+  line-height: 30px;
+  background-color: #eeeeee;
+  padding: 5px;
+}
+#page section {
+  padding: 10px;
+}
+#page footer {
+  background-color: black;
+  color: white;
+  clear: both;
+  text-align: center;
+  padding: 5px;
+}
+@media (max-width: 520px) {
+  #page {
+    width: 100%;
+  }
+}
+@media (min-width: 520px) {
+  #page {
+    width: 80%;
+  }
+  #page nav {
+    width: 180px;
+    float: left;
+  }
+  #page section {
+    margin-left: 200px;
+  }
+}
+/*# sourceMappingURL=f2f.css.map */
