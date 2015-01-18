@@ -15,7 +15,7 @@ class HomepagePresenter extends BasePresenter {
     protected function createComponentTextControl() {
         $text = $this->textControlFactory->create();
         $text->setId(100);
-        $text->setEdit(TRUE);
+        $text->setEdit(FALSE);
         return $text;
     }
 
