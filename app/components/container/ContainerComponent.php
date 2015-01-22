@@ -12,7 +12,6 @@ class ContainerComponent extends \App\Components\GenericComponent {
     /** @TODO: issue #4 */
     protected function createComponentPageItem($params) {
         return new \Nette\Application\UI\Multiplier(function ($name) {
-            dump($name);
             if ($name == 'textControl') {
                 return new \App\Components\Text\TextControl(NULL, NULL, 0, FALSE);
             }
