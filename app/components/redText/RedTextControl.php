@@ -26,7 +26,7 @@ class RedTextControl extends \App\Components\GenericComponent {
      * @return string
      */
     public function loadText() {
-        $context = new \Nette\Database\Context(new \Nette\Database\Connection('sqlite:../app/components/text/db'));
+        $context = new \Nette\Database\Context(new \Nette\Database\Connection('sqlite:../app/components/redText/db'));
         $table = $context->table('data');
         $row = $table->where(array('component_id' => $this->id))->fetch();
         return $row->text;
@@ -55,11 +55,14 @@ class RedTextControl extends \App\Components\GenericComponent {
     }
 
     public function render($id = NULL) {
+        if ($this->id != NULL) {
+            dump($this->id);
+        }
         if ($this->id == NULL && $id != NULL) {
             $this->id = $id;
             $this->text = $this->loadText();
         }
-        
+
         $this->template->text = $this->text;
         if ($this->edit == TRUE) {
             $this->template->setFile(__DIR__ . '/text-edit.latte');

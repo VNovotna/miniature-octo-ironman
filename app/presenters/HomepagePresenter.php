@@ -12,6 +12,10 @@ class HomepagePresenter extends BasePresenter {
      */
     public $textControlFactory;
     
+    protected function createComponentContainer(){
+        return new \App\Components\Container\ContainerComponent();
+    }
+
     protected function createComponentTextControl() {
         $text = $this->textControlFactory->create();
         $text->setId(100);
