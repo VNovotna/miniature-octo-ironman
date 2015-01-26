@@ -14,7 +14,7 @@ class ContainerComponent extends \App\Components\GenericComponent {
         return new \Nette\Application\UI\Multiplier(function ($name) {
             dump($name);
             if ($name == 'textControl') {
-                return new \App\Components\Text\TextControl(NULL, NULL, 0, FALSE);
+                return new \App\Components\Text\TextControl(NULL, NULL, 0, TRUE);
             }
             if ($name == 'redTextControl') {
                 return new \App\Components\RedText\RedTextControl(NULL, NULL, 0, FALSE);
