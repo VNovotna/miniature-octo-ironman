@@ -19,9 +19,12 @@ nette:
 
 	session:
 		expiration: 14 days
+	database:
+		default:
+			dsn: "sqlite:../app/components/text/db"
 
 
 services:
 	- App\Model\UserManager
-	- App\Components\Text\IRegistrationTextControl
+	- App\Model\DB\LayoutRepository
 	router: App\RouterFactory::createRouter

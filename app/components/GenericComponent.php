@@ -20,8 +20,7 @@ class GenericComponent extends \Nette\Application\UI\Control {
      */
     private $edit;
 
-    public function __construct(\Nette\ComponentModel\IContainer $parent = NULL, $name = NULL, $id = NULL, $edit=FALSE) {
-        parent::__construct($parent, $name);
+    public function __construct($id = NULL, $edit = FALSE) {
         $this->id = $id;
         $this->edit = $edit;
     }

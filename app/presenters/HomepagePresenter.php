@@ -6,21 +6,15 @@ namespace App\Presenters;
  * Homepage presenter.
  */
 class HomepagePresenter extends BasePresenter {
+
     /**
      * @inject
-     * @var \App\Components\Text\IRegistrationTextControl
+     * @var \Nette\Database\Context
      */
-    public $textControlFactory;
-    
-    protected function createComponentContainer(){
-        return new \App\Components\Container\ContainerComponent();
-    }
+    public $context;
 
-    protected function createComponentTextControl() {
-        $text = $this->textControlFactory->create();
-        $text->setId(100);
-        $text->setEdit(FALSE);
-        return $text;
+    protected function createComponentContainer() {
+        return new \App\Components\Container\ContainerComponent($this->context);
     }
 
     public function renderDefault() {
