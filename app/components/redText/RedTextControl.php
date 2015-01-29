@@ -63,9 +63,6 @@ class RedTextControl extends \App\Components\GenericComponent {
             $this->id = $id;
             $this->text = $this->loadText();
         }
-        if ($this->id != NULL) {
-            dump($this->id);
-        }
         $this->template->text = $this->text;
         if ($this->edit == TRUE) {
             $this->template->setFile(__DIR__ . '/text-edit.latte');
