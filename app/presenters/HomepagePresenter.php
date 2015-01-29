@@ -9,12 +9,12 @@ class HomepagePresenter extends BasePresenter {
 
     /**
      * @inject
-     * @var \Nette\Database\Context
+     * @var \App\Model\Container
      */
-    public $context;
+    public $container;
 
     protected function createComponentContainer() {
-        return new \App\Components\Container\ContainerComponent($this->context);
+        return new \App\Components\Container\ContainerComponent($this->container);
     }
 
     public function renderDefault() {

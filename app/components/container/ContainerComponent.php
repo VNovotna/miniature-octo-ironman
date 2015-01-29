@@ -10,12 +10,12 @@ namespace App\Components\Container;
 class ContainerComponent extends \App\Components\GenericComponent {
 
     /**
-     * @var \Nette\Database\Context
+     * @var \App\Model\Container
      */
-    public $context;
+    public $container;
 
-    public function __construct(\Nette\Database\Context $context, $id = NULL, $edit = FALSE) {
-        $this->context = $context;
+    public function __construct(\App\Model\Container $container, $id = NULL, $edit = FALSE) {
+        $this->container = $container;
         $this->id = $id;
         $this->edit = $edit;
     }

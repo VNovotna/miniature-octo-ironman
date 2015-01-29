@@ -14,16 +14,29 @@ class Container extends \Nette\Object {
      */
     private $context;
 
+    /**
+     * @param \Nette\Database\Context $context
+     */
     public function __construct(\Nette\Database\Context $context) {
         $this->context = $context;
     }
 
     /**
-     * @param int $id id of container7
+     * @param int $id id of container
      * @return array array('component_name'=>'id', ...)
      */
     public function getComponents($id) {
+        $container = $this->context->table("container");
         throw new \Nette\NotImplementedException;
+    }
+
+    /**
+     * 
+     * @param string $name
+     * @return \App\Components\GenericComponent descendants
+     */
+    public function createComponent($name) {
+        return new \App\Components\Text\TextControl();
     }
 
 }

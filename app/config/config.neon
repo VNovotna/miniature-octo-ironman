@@ -25,6 +25,6 @@ nette:
 
 
 services:
-	- App\Model\UserManager
+	- App\Model\Container
 	- App\Model\DB\LayoutRepository
 	router: App\RouterFactory::createRouter
