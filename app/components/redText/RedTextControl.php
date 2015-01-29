@@ -23,12 +23,13 @@ class RedTextControl extends \App\Components\GenericComponent {
     }
 
     /**
+     * @todo rewrite to mvc
      * @return string
      */
     public function loadText() {
-        $context = new \Nette\Database\Context(new \Nette\Database\Connection('sqlite:../app/components/redText/db'));
-        $table = $context->table('data');
-        $row = $table->where(array('component_id' => $this->id))->fetch();
+        $context = new \Nette\Database\Context(new \Nette\Database\Connection('sqlite:../app/components/container/db'));
+        $table = $context->table('data_redText');
+        $row = $table->where(array('id' => $this->id))->fetch();
         if (isset($row->text)) {
             return $row->text;
         }
