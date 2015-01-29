@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Components\RedText;
+namespace App\Components;
 
 /**
  * Description of TextControl

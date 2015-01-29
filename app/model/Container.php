@@ -31,17 +31,12 @@ class Container extends \Nette\Object {
     }
 
     /**
-     * 
      * @param string $name
      * @return \App\Components\GenericComponent descendants
      */
     public function createComponent($name) {
-        if ($name == 'textControl') {
-            return new \App\Components\Text\TextControl(0, FALSE);
-        }
-        if ($name == 'redTextControl') {
-            return new \App\Components\RedText\RedTextControl(0, FALSE);
-        }
+        $name = "\\App\\Components\\" . \Nette\Utils\Strings::firstUpper($name);
+        return new $name;
     }
 
 }

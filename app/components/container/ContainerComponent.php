@@ -20,10 +20,6 @@ class ContainerComponent extends \App\Components\GenericComponent {
         $this->edit = $edit;
     }
 
-    /**
-     * @TODO: issue #3 
-     * @TODO: issue #4
-     */
     protected function createComponentPageItem($params) {
         return new \Nette\Application\UI\Multiplier(function ($name) {
             return $this->container->createComponent($name);

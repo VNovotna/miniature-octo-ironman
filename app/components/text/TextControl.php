@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Components\Text;
+namespace App\Components;
 
 /**
  * Description of TextControl
