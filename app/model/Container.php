@@ -36,7 +36,12 @@ class Container extends \Nette\Object {
      * @return \App\Components\GenericComponent descendants
      */
     public function createComponent($name) {
-        return new \App\Components\Text\TextControl();
+        if ($name == 'textControl') {
+            return new \App\Components\Text\TextControl(0, FALSE);
+        }
+        if ($name == 'redTextControl') {
+            return new \App\Components\RedText\RedTextControl(0, FALSE);
+        }
     }
 
 }

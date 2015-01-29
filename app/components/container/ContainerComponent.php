@@ -26,12 +26,7 @@ class ContainerComponent extends \App\Components\GenericComponent {
      */
     protected function createComponentPageItem($params) {
         return new \Nette\Application\UI\Multiplier(function ($name) {
-            if ($name == 'textControl') {
-                return new \App\Components\Text\TextControl(0, FALSE);
-            }
-            if ($name == 'redTextControl') {
-                return new \App\Components\RedText\RedTextControl(0, FALSE);
-            }
+            return $this->container->createComponent($name);
         });
     }
 
