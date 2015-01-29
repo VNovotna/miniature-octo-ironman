@@ -27,6 +27,8 @@ class ContainerComponent extends \App\Components\GenericComponent {
     }
 
     public function render() {
+        $this->template->components = $this->container->getComponents($this->id);
+        dump($this->template->components);
         $this->template->setFile(__DIR__ . '/container.latte');
         $this->template->render();
     }

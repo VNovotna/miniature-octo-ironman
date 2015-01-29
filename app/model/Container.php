@@ -23,11 +23,15 @@ class Container extends \Nette\Object {
 
     /**
      * @param int $id id of container
-     * @return array array('component_name'=>'id', ...)
+     * @return array array(0=>array('name'=>'', 'id'=>''), ...)
      */
     public function getComponents($id) {
-        $container = $this->context->table("container");
-        throw new \Nette\NotImplementedException;
+        $contentTable = $this->context->table("content");
+        $components = array();
+        foreach ($contentTable->where(array('container_id' => $id)) as $row) {
+            $components[] = array('name' => $row->component_name, 'id' => $row->component_id);
+        }
+        return $components;
     }
 
     /**

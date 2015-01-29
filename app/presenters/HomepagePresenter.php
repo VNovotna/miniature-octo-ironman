@@ -14,7 +14,10 @@ class HomepagePresenter extends BasePresenter {
     public $container;
 
     protected function createComponentContainer() {
-        return new \App\Components\Container\ContainerComponent($this->container);
+        $component = new \App\Components\Container\ContainerComponent($this->container);
+        /** @todo cannot be harcoded */
+        $component->setId(3);
+        return $component;
     }
 
     public function renderDefault() {

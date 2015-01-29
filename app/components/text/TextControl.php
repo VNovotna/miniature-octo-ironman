@@ -29,7 +29,10 @@ class TextControl extends \App\Components\GenericComponent {
         $context = new \Nette\Database\Context(new \Nette\Database\Connection('sqlite:../app/components/text/db'));
         $table = $context->table('data');
         $row = $table->where(array('component_id' => $this->id))->fetch();
-        return $row->text;
+        if (isset($row->text)) {
+            return $row->text;
+        }
+        return "bad id";
     }
 
     /**

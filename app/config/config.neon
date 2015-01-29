@@ -21,7 +21,7 @@ nette:
 		expiration: 14 days
 	database:
 		default:
-			dsn: "sqlite:../app/components/text/db"
+			dsn: "sqlite:../app/components/container/db"
 
 
 services:
