@@ -7,7 +7,7 @@ namespace App\Components;
  *
  * @author Viky Novotných
  */
-class GenericComponent extends \Nette\Application\UI\Control {
+abstract class GenericComponent extends \Nette\Application\UI\Control {
 
     /**
      * @var int
