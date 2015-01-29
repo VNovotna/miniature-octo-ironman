@@ -14,10 +14,9 @@ class HomepagePresenter extends BasePresenter {
     public $container;
 
     protected function createComponentContainer() {
-        $component = new \App\Components\Container\ContainerComponent($this->container);
-        /** @todo cannot be harcoded */
-        $component->setId(3);
-        return $component;
+        return new \Nette\Application\UI\Multiplier(function ($id) {
+            return new \App\Components\Container\ContainerComponent($this->container,$id);
+        });
     }
 
     public function renderDefault() {

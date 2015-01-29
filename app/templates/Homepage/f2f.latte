@@ -1,20 +1,19 @@
 {block content}
 <div id="page">
     <header>
-        <h1>City Gallery</h1>
+        {control container-1}
     </header>
 
     <nav>
-        London<br>
-        Paris<br>
-        Tokyo<br>
+        {control container-2}
     </nav>
 
     <section>
-        {control container}
+        {control container-3}
     </section>
 
     <footer>
+        {control container-4}
         PHP {=PHP_VERSION} | {ifset $_SERVER['SERVER_SOFTWARE']}Server {$_SERVER['SERVER_SOFTWARE']}{/ifset} | Nette Framework {=Nette\Framework::VERSION}
     </footer>
 </div>
