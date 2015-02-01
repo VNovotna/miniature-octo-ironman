@@ -1,19 +1,19 @@
 {block content}
 <div id="page">
     <header>
-        {control container-1}
+        {control container-$containerIds[0]}
     </header>
 
     <nav>
-        {control container-2}
+        {control container-$containerIds[1]}
     </nav>
 
     <section>
-        {control container-3}
+        {control container-$containerIds[2]}
     </section>
 
     <footer>
-        {control container-4}
+        {control container-$containerIds[3]}
         PHP {=PHP_VERSION} | {ifset $_SERVER['SERVER_SOFTWARE']}Server {$_SERVER['SERVER_SOFTWARE']}{/ifset} | Nette Framework {=Nette\Framework::VERSION}
     </footer>
 </div>

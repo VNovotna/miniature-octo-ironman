@@ -43,4 +43,25 @@ class Container extends \Nette\Object {
         return new $name;
     }
 
+    /**
+     * @return array array('name'=>'', 'id'=>'')
+     */
+    public function getLayout() {
+        $layout = $this->context->table("layout")->fetch();
+        return array('id' => $layout->id, 'name' => $layout->name);
+    }
+
+    /**
+     * @param int $layout_id
+     * @return array array(id,id,id)
+     */
+    public function getContainers($layout_id) {
+        $containersTable = $this->context->table("container");
+        $containers = array();
+        foreach ($containersTable->where(array('layout_id' => $layout_id)) as $row) {
+            $containers[] = $row->id;
+        }
+        return $containers;
+    }
+
 }
