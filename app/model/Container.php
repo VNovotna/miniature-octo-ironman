@@ -56,7 +56,7 @@ class Container extends \Nette\Object {
      * @return array array(id,id,id)
      */
     public function getContainers($layout_id) {
-        $containersTable = $this->context->table("container");
+        $containersTable = $this->context->table("container")->order('order');
         $containers = array();
         foreach ($containersTable->where(array('layout_id' => $layout_id)) as $row) {
             $containers[] = $row->id;
