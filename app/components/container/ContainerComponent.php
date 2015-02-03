@@ -12,22 +12,22 @@ class ContainerComponent extends \App\Components\GenericComponent {
     /**
      * @var \App\Model\Container
      */
-    public $container;
+    public $containerModel;
 
     public function __construct(\App\Model\Container $container, $id = NULL, $edit = FALSE) {
-        $this->container = $container;
+        $this->containerModel = $container;
         $this->id = $id;
         $this->edit = $edit;
     }
 
     protected function createComponentPageItem($params) {
         return new \Nette\Application\UI\Multiplier(function ($name) {
-            return $this->container->createComponent($name);
+            return $this->containerModel->createComponent($name);
         });
     }
 
     public function render() {
-        $this->template->components = $this->container->getComponents($this->id);
+        $this->template->components = $this->containerModel->getComponents($this->id);
         $this->template->setFile(__DIR__ . '/container.latte');
         $this->template->render();
     }
