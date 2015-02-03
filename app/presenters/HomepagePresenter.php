@@ -11,7 +11,7 @@ class HomepagePresenter extends BasePresenter {
      * @inject
      * @var \App\Model\Container
      */
-    public $container;
+    public $containerModel;
 
     /**
      * @var array array('name'=>'', 'id'=>'') 
@@ -28,13 +28,13 @@ class HomepagePresenter extends BasePresenter {
      */
     protected function createComponentContainer() {
         return new \Nette\Application\UI\Multiplier(function ($id) {
-            return new \App\Components\Container\ContainerComponent($this->container, $id);
+            return new \App\Components\Container\ContainerComponent($this->containerModel, $id);
         });
     }
 
     public function actionDefault() {
-        $this->layout = $this->container->getLayout();
-        $this->containerIds = $this->container->getContainers($this->layout['id']);
+        $this->layout = $this->containerModel->getLayout();
+        $this->containerIds = $this->containerModel->getContainers($this->layout['id']);
     }
 
     public function renderDefault() {
