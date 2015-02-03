@@ -11,6 +11,7 @@ $configurator->enableDebugger(__DIR__ . '/../log');
 $configurator->setTempDirectory(__DIR__ . '/../temp');
 
 $configurator->createRobotLoader()
+        ->setCacheStorage(new \Nette\Caching\Storages\MemcachedStorage())
 	->addDirectory(__DIR__)
 	->register();
 
