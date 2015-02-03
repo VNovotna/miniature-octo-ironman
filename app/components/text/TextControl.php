@@ -27,7 +27,8 @@ class TextControl extends \App\Components\GenericComponent {
      * @return string
      */
     public function loadText() {
-        $context = new \Nette\Database\Context(new \Nette\Database\Connection('sqlite:../app/components/container/db'));
+        $connection = new \Nette\Database\Connection('sqlite:../app/components/container/db');
+        $context = new \Nette\Database\Context($connection, new \Nette\Database\Structure($connection, new \Nette\Caching\Storages\MemcachedStorage()));
         $table = $context->table('data_text');
         $row = $table->where(array('id' => $this->id))->fetch();
         if (isset($row->text)) {
