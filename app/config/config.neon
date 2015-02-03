@@ -27,3 +27,5 @@ services:
 	- App\Model\Container
 	- App\Model\DB\LayoutRepository
 	router: App\RouterFactory::createRouter
+	cacheStorage:
+		class: Nette\Caching\Storages\MemcachedStorage
