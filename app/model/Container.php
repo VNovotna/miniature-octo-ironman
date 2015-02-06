@@ -13,12 +13,18 @@ class Container extends \Nette\Object {
      * @var \Nette\Database\Context
      */
     private $context;
+    
+    /**
+     * @var \Nette\Caching\IStorage
+     */
+    private $storage;
 
     /**
      * @param \Nette\Database\Context $context
      */
-    public function __construct(\Nette\Database\Context $context) {
+    public function __construct(\Nette\Database\Context $context, \Nette\Caching\IStorage $storage) {
         $this->context = $context;
+        $this->storage = $storage;
     }
 
     /**
